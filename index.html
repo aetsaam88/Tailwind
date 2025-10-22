@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acme Agency — Modern Business Website</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .accent-circle {
+      background: radial-gradient(circle at 30% 30%, rgba(99,102,241,0.15), transparent 30%),
+                  radial-gradient(circle at 70% 70%, rgba(59,130,246,0.12), transparent 30%);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-gray-50">
+
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-blue-400 flex items-center justify-center text-white font-bold">AA</div>
+          <span class="font-semibold text-lg">Acme Agency</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#services" class="hover:text-indigo-600">Services</a>
+          <a href="#work" class="hover:text-indigo-600">Work</a>
+          <a href="#team" class="hover:text-indigo-600">Team</a>
+          <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
+          <a href="#contact" class="hover:text-indigo-600">Contact</a>
+          <a href="#" class="ml-4 inline-block px-4 py-2 bg-indigo-600 text-white rounded shadow hover:bg-indigo-700">Get a Quote</a>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" aria-label="Toggle menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300">
+   
+            <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="md:hidden hidden border-t bg-white">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#services" class="block px-3 py-2 rounded hover:bg-gray-100">Services</a>
+        <a href="#work" class="block px-3 py-2 rounded hover:bg-gray-100">Work</a>
+        <a href="#team" class="block px-3 py-2 rounded hover:bg-gray-100">Team</a>
+        <a href="#pricing" class="block px-3 py-2 rounded hover:bg-gray-100">Pricing</a>
+        <a href="#contact" class="block px-3 py-2 rounded hover:bg-gray-100">Contact</a>
+        <a href="#" class="block px-3 py-2 rounded bg-indigo-600 text-white text-center">Get a Quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden accent-circle">
+      <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div class="md:flex md:items-center md:gap-12">
+          <div class="md:w-7/12 reveal">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-gray-900 mb-4">
+              We build digital products that help businesses grow
+            </h1>
+            <p class="text-lg text-gray-600 mb-6">
+              Acme Agency designs and develops websites, web apps and branding that convert visitors into customers. Modern UI, measurable results.
+            </p>
+
+            <div class="flex gap-3 flex-wrap">
+              <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3 bg-indigo-600 text-white rounded shadow hover:bg-indigo-700 transition">
+                Get a Free Quote
+              </a>
+              <a href="#work" class="inline-flex items-center gap-2 px-6 py-3 border rounded hover:bg-gray-100">
+                View Our Work
+              </a>
+            </div>
+
+            <div class="mt-8 flex items-center gap-6">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-semibold">5+</div>
+                <div>
+                  <div class="text-sm text-gray-500">Years in business</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-semibold">120+</div>
+                <div>
+                  <div class="text-sm text-gray-500">Projects delivered</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-5/12 mt-10 md:mt-0 reveal">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+              <div class="h-56 md:h-64 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg flex items-center justify-center">
+             
+                <div class="text-center px-4">
+                  <div class="text-2xl font-bold text-indigo-600">Your project, beautifully built</div>
+                  <p class="text-sm text-gray-500 mt-2">Design, develop, launch — all under one roof.</p>
+                </div>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm text-gray-600">
+                <li class="flex items-center gap-3"><span class="inline-block w-2 h-2 rounded-full bg-indigo-600"></span> UX & UI Design</li>
+                <li class="flex items-center gap-3"><span class="inline-block w-2 h-2 rounded-full bg-indigo-600"></span> Web Development (React / Tailwind)</li>
+                <li class="flex items-center gap-3"><span class="inline-block w-2 h-2 rounded-full bg-indigo-600"></span> Performance & SEO</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 hidden lg:block">
+        <svg class="h-full w-full" viewBox="0 0 500 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="400" r="320" fill="url(#g1)" />
+          <defs>
+            <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150 200) rotate(60) scale(400)">
+              <stop stop-color="#6366F1" stop-opacity="0.06"/>
+              <stop offset="1" stop-color="#06B6D4" stop-opacity="0.02"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <section id="services" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl font-bold">Services we offer</h2>
+        <p class="text-gray-600 mt-2">Full-stack solutions — design to deployment.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow reveal">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 text-indigo-600 mb-4">
+          
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.657 0 3 .672 3 1.5S13.657 11 12 11s-3-.672-3-1.5S10.343 8 12 8zM5 12c0 2.485 3.134 4.5 7 4.5s7-2.015 7-4.5S14.866 7.5 11 7.5 5 9.515 5 12z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">UI / UX Design</h3>
+          <p class="text-gray-500 mb-4">Human-centered designs that improve conversions, crafted after user research.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Learn more →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow reveal">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 text-indigo-600 mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6M7 20h10"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Web Development</h3>
+          <p class="text-gray-500 mb-4">Fast, maintainable front-ends and robust back-ends with modern frameworks.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Learn more →</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow reveal">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-md bg-indigo-50 text-indigo-600 mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6M7 20h10"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Performance & SEO</h3>
+          <p class="text-gray-500 mb-4">Audits, speed optimization and on-page SEO to help you rank and convert.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Learn more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10 reveal">
+          <h2 class="text-3xl font-bold">Selected Work</h2>
+          <p class="text-gray-600 mt-2">A few projects we are proud of.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- card -->
+          <article class="bg-white rounded-xl shadow overflow-hidden reveal">
+            <div class="h-40 bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center">
+              <div class="text-center">
+                <h3 class="font-semibold text-lg">E-commerce Redesign</h3>
+                <p class="text-sm text-gray-500 mt-1">UI + frontend performance</p>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-gray-600 text-sm mb-4">Increased conversion rate by 26% after redesign and checkout optimizations.</p>
+              <a href="#" class="text-indigo-600 font-medium">Case study →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow overflow-hidden reveal">
+            <div class="h-40 bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center">
+              <div class="text-center">
+                <h3 class="font-semibold text-lg">SaaS Landing Page</h3>
+                <p class="text-sm text-gray-500 mt-1">Branding + frontend</p>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-gray-600 text-sm mb-4">Fast, accessible landing that improved trial signups.</p>
+              <a href="#" class="text-indigo-600 font-medium">Case study →</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow overflow-hidden reveal">
+            <div class="h-40 bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center">
+              <div class="text-center">
+                <h3 class="font-semibold text-lg">Marketing Website</h3>
+                <p class="text-sm text-gray-500 mt-1">Design system + CMS</p>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-gray-600 text-sm mb-4">A consistent design system for content team to publish faster.</p>
+              <a href="#" class="text-indigo-600 font-medium">Case study →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section id="team" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl font-bold">Meet the team</h2>
+        <p class="text-gray-600 mt-2">Small but mighty — designers and developers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl text-center reveal">
+          <div class="mx-auto w-24 h-24 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mb-4">AL</div>
+          <h4 class="font-semibold">Ali Khan</h4>
+          <p class="text-sm text-gray-500">Lead Designer</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl text-center reveal">
+          <div class="mx-auto w-24 h-24 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mb-4">SA</div>
+          <h4 class="font-semibold">Sara Ahmed</h4>
+          <p class="text-sm text-gray-500">Frontend Dev</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl text-center reveal">
+          <div class="mx-auto w-24 h-24 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mb-4">MK</div>
+          <h4 class="font-semibold">M. Khan</h4>
+          <p class="text-sm text-gray-500">Backend Dev</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl text-center reveal">
+          <div class="mx-auto w-24 h-24 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold mb-4">NZ</div>
+          <h4 class="font-semibold">Nazia Z.</h4>
+          <p class="text-sm text-gray-500">Marketing</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center reveal">
+        <h2 class="text-2xl font-bold">What clients say</h2>
+        <p class="text-gray-600 mt-2">Real feedback from real customers.</p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <figure class="bg-gray-50 p-6 rounded-xl text-left reveal">
+            <blockquote class="text-gray-700">“Acme helped us redesign our store and lift conversion significantly. Great communication and fast delivery.”</blockquote>
+            <figcaption class="mt-4 text-sm text-gray-500">— Omar, CEO at StoreCo</figcaption>
+          </figure>
+
+          <figure class="bg-gray-50 p-6 rounded-xl text-left reveal">
+            <blockquote class="text-gray-700">“The team's attention to detail on accessibility and performance made a real difference.”</blockquote>
+            <figcaption class="mt-4 text-sm text-gray-500">— Aisha, Head of Product at SaaSly</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center mb-8 reveal">
+        <h2 class="text-3xl font-bold">Simple pricing</h2>
+        <p class="text-gray-600 mt-2">No surprises. Transparent monthly & project rates.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-lg mb-4">Starter</h3>
+          <div class="text-3xl font-bold mb-4">$699 <span class="text-sm text-gray-500">/ project</span></div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>Design concept</li>
+            <li>Basic development</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#contact" class="block text-center py-2 bg-indigo-600 text-white rounded">Book Starter</a>
+        </div>
+
+        <div class="bg-indigo-600 text-white p-6 rounded-xl shadow-lg reveal">
+          <h3 class="font-semibold text-lg mb-4">Business</h3>
+          <div class="text-3xl font-bold mb-4">$1,999 <span class="text-sm text-indigo-200">/ project</span></div>
+          <ul class="text-sm space-y-2 mb-6">
+            <li>Design & full development</li>
+            <li>SEO basics</li>
+            <li>3 months support</li>
+          </ul>
+          <a href="#contact" class="block text-center py-2 bg-white text-indigo-600 rounded">Book Business</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-lg mb-4">Enterprise</h3>
+          <div class="text-3xl font-bold mb-4">Custom pricing</div>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>Dedicated team</li>
+            <li>SLA & priority support</li>
+            <li>Custom integrations</li>
+          </ul>
+          <a href="#contact" class="block text-center py-2 border border-indigo-600 text-indigo-600 rounded">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-gray-50 py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-8 reveal">
+          <h2 class="text-3xl font-bold">Work with us</h2>
+          <p class="text-gray-600 mt-2">Tell us about your project and we'll reply within 1 business day.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-6 md:p-10 reveal">
+          <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-2">Name</label>
+              <input name="name" required class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Your full name" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2">Email</label>
+              <input name="email" type="email" required class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="you@example.com" />
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium mb-2">Project details</label>
+              <textarea name="message" rows="5" required class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300" placeholder="Describe your project..."></textarea>
+            </div>
+
+            <div class="md:col-span-2 flex items-center gap-4">
+              <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded hover:bg-indigo-700">Send message</button>
+              <div id="form-status" class="text-sm text-gray-500">We will respond within 24 hours.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <div class="md:flex md:justify-between md:items-center">
+        <div class="mb-4 md:mb-0">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-blue-400 flex items-center justify-center text-white font-bold">AA</div>
+            <div>
+              <div class="font-semibold">Acme Agency</div>
+              <div class="text-sm text-gray-500">Design & Development</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+          <div>
+            <h4 class="font-semibold mb-2">Company</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li><a href="#" class="hover:underline">About</a></li>
+              <li><a href="#" class="hover:underline">Careers</a></li>
+              <li><a href="#" class="hover:underline">Press</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Services</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li><a href="#services" class="hover:underline">Design</a></li>
+              <li><a href="#services" class="hover:underline">Development</a></li>
+              <li><a href="#pricing" class="hover:underline">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Resources</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li><a href="#" class="hover:underline">Blog</a></li>
+              <li><a href="#" class="hover:underline">Help center</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Contact</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li><a href="mailto:hello@acmeagency.com" class="hover:underline">hello@acmeagency.com</a></li>
+              <li><a href="#" class="hover:underline">+92 300 1234567</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t pt-6 text-sm text-gray-500 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <div>© <span id="year"></span> Acme Agency. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-indigo-600">Privacy</a>
+          <a href="#" class="hover:text-indigo-600">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      if (open) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        if (!targetId) return;
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get('name').trim();
+      const email = formData.get('email').trim();
+      const message = formData.get('message').trim();
+      if (!name || !email || !message) {
+        status.textContent = 'Please fill all fields.';
+        status.classList.add('text-red-500');
+        return;
+      }
+
+      status.textContent = 'Sending...';
+      setTimeout(() => {
+        status.classList.remove('text-red-500');
+        status.textContent = 'Message sent! We will contact you soon.';
+        form.reset();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
